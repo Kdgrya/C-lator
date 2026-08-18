@@ -1,14 +1,11 @@
 #include <stdio>
 #include "calculadora.h"
 
-int main(void){
+int calculadora(char operacion){
 
-	int operacion;	
 	int primer_numero;
 	int segundo_numero;
 
-	printf( que operacion desea hacer hoy );
-	scanf(%d, &operacion);
 	
 	printf( digite el primer numero de la operacion);
 	scanf(%d, &primer_numero);
