@@ -3,7 +3,7 @@
 
 int main() 
 {
-    char opcion;
+    int opcion;
     printf("saludos \n");
 
     do
