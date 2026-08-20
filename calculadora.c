@@ -1,35 +1,48 @@
-#include <stdio>
+#include <stdio.h>
 #include "calculadora.h"
 
-int calculadora(char operacion){
+void calculadora(char val){
 
-	int primer_numero;
-	int segundo_numero;
+	op = val;
+	numeros n;
 
-	
-	printf( digite el primer numero de la operacion);
-	scanf(%d, &primer_numero);
-	
-	printf(digite el segundo numero de la operacion);
-	scanf(%d, &segundo_numero);
+	switch(op){
 
-	switch(operacion)
+		default:
+			printf("operacion no valida volviendo al  inicio");
+			main();
 
-		case suma
-			suma(primer_numero, segundo_numero);
-			return 0;
+		case suma:
+			n.r = n.a + n.b;
+			printf("%d",n.r, "\n");
+			break;
 
-		case resta 
-			resta(primer_numero, segundo_numero);
-			return 0;
+		case resta:
+			n.r = n.a - n.b;
+			printf("%d",n.r, "\n");
+			break;
 
-		case multiplicacion 
-			multiplicacion(primer_numero, segundo_numero);
-			return 0;
+		case multiplicacion: 
+			n.r = n.a * n.b;
+			printf("%d",n.r, "\n");
+			break;
 
-		case division
-			division(primer_numero, segundo_numero);
-			return 0;
+		case division:
+			if (n.b !=0)
+			{
+				n.r = n.a / n.b;
+				printf("%d",n.r, "\n");
+			}
+			
+			else{
+				printf(" no es posible dividir entre 0");
+			}
+			
+			break;
 
+		
+	}
+
+}
 
 			

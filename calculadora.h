@@ -1,21 +1,29 @@
 #pragma once
 
+char operacion_deseada;
 
-void suma ( n1, n2){
-	printf( n1 + n2);
-	return 0;
 
-void resta( n1, n2){
-	printf( n1 - n1);
-	return 0;
-}
+enum operaciones
+{
+    suma,
+    resta,
+    division,
+    multiplicacion,
+    exit,
+} op;
 
-void multiplicacion ( n1, n2){
-	printf( n1 * n2);
-	return 0;
-}
+typedef struct num
+{
+    int a;
+    int b;
+    int r;
+    int endl;
+}numeros;
 
-void division ( n1, n2) {
-	printf( n1 / n2);
-	return 0;
-}
+enum operaciones op;
+
+
+ void calculadora(char val );
+ int  main();
+ //change();
+

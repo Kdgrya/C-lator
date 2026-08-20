@@ -1,17 +1,23 @@
-#include <stdio>
+#include <stdio.h>
+#include "calculadora.h"
 
-int main<void> 
+int main() 
 {
-    if  (calaculadora() == -1){
-        printf("error al inicializar calculadora\n");
-        return -1;
-    }
-    
-    char operacion;	
-    printf( que operacion desea hacer hoy );
-	scanf(%d, &operacion);
+    char opcion;
+    printf("saludos \n");
 
-    calculadora(operacion);
-    return 0
+    do
+    {
+        printf( "que operacion desea hacer hoy \n" );
+        printf("1: volver al inicio \n 2: hacer otra operacion \n 3: cambiar la operaccion \n 4: salir de la calculadora \n");
+
+        scanf("%d", &operacion_deseada);
+
+        calculadora(operacion_deseada);
+
+        printf( "para salir escriba el 0 \n de lo contrario escriba cualquier otro numero " );
+        scanf("%d",&opcion);
+
+    } while (opcion == 0);
 
 }
