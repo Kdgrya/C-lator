@@ -53,8 +53,51 @@ _______________________________
 ### main.c
 
 ```c
+#include <stdio.h>
+#include "calculadora.h"
 
+int main() 
+{
+ =================================================   
+    /* se inicia declarando la variable privada que es para declarar si se sigue ejecutando o se cierra 
+    luego esta el primer print*/ 
+    {
+    int opcion;
+    printf("saludos \n");
+    }
+==================================================
+    
+    {
+        /*luego continuamos declarando un loop do el cual me estara ejecutando el codigo hasta que la variable de ejecucion (opcion) sea 0
 
+        en esta se ejecuta los printeos de inicio y de seleccion de opciones de operaciones
+        
+        luego se le asigna a la variable de operacion deseada  que se encuentra en nuestro header 
+
+        y acontinuacion este procede a pasarlo a la funcion claculadora con el valor de lo que se especifico 
+
+        una vez ya completada  retornara con la preguntra de si se desea continuar o no y una vez dicho que no procederra a cerrarse  
+
+        */
+    do 
+    {
+        printf( "que operacion desea hacer\n" );
+        printf(" suma \n resta  \n division \n 4: Multiplicacion\n");
+
+        scanf("%d", &operacion_deseada);
+
+        calculadora(operacion_deseada);
+
+        printf( "para salir escriba el 0 \n de lo contrario escriba cualquier otro numero " );
+        scanf("%d",&opcion);
+
+    } while (opcion == 0);
+
+    exit();
+
+    }
+
+}
 
 ```
 
@@ -62,6 +105,62 @@ _______________________________
 
 ```c
 
+#include <stdio.h>
+#include "calculadora.h"
+
+void calculadora(char val){
+    {
+    // se le asigna el valor al enum con el parametro pasado 
+	op = val;
+
+    // se invoka y se asigna un nombre a la estructura type def el cual contendra los valores que necesitaremos guardar para las operaciones 
+
+	numeros n;
+    }
+
+    /*
+       aqui solo se estaran asignando que hacer en cada caso cuando el enum sea suma resta mult o division 
+    */
+	switch(op){
+
+		default:
+			printf("operacion no valida volviendo al  inicio");
+			main();
+
+		case suma:
+			n.r = n.a + n.b;
+			printf("%d",n.r, "\n");
+			break;
+
+		case resta:
+			n.r = n.a - n.b;
+			printf("%d",n.r, "\n");
+			break;
+
+		case multiplicacion: 
+			n.r = n.a * n.b;
+			printf("%d",n.r, "\n");
+			break;
+
+		case division:
+			if (n.b !=0)
+			{
+				n.r = n.a / n.b;
+				printf("%d",n.r, "\n");
+			}
+			
+			else{
+				printf(" no es posible dividir entre 0");
+			}
+			
+			break;
+
+		
+	}
+
+}
+
+			
 
 
 ```
@@ -70,6 +169,40 @@ _______________________________
 
 ```c
 
+// evita que este se a;ada mas de una vez 
+#pragma once
+
+
+// variable global que se usara para pasar los parametros deseados para realizar las diferentes operaciones
+char operacion_deseada;
+
+
+enum operaciones
+{
+    suma,
+    resta,
+    division,
+    multiplicacion,
+    exit,
+} op;
+
+typedef struct num
+{
+    int a;
+    int b;
+    int r;
+    int endl;
+}numeros;
+
+enum operaciones op;
+
+// llmando las diferentes funciones para que se puedan invocar en cualquier parte  del proyecto sin tener que estar llamando al archivo directamente 
+
+ void calculadora(char val );
+ int  main();
+ //change();
+
+ 
 
 
 ```
