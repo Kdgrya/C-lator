@@ -1,29 +1,20 @@
 #pragma once
 
-char operacion_deseada;
 
 
-enum operaciones
+typedef enum 
 {
-    suma,
-    resta,
-    division,
+    suma = 1,
+    resta ,
+    division ,
     multiplicacion,
-    exit,
-} op;
-
-typedef struct num
-{
-    int a;
-    int b;
-    int r;
-    int endl;
-}numeros;
-
-enum operaciones op;
+} operaciones ;
 
 
- void calculadora(char val );
+
+extern operaciones op;
+
+ void calculadora(char val);
  int  main();
  //change();
 

@@ -59,17 +59,16 @@ _______________________________
 int main() 
 {
  =================================================   
-    /* se inicia declarando la variable privada que es para declarar si se sigue ejecutando o se cierra 
+    /* se inicia declarando la variable privada que es para declarar que operacion el usuario deseaara hacer 
     luego esta el primer print*/ 
     {
-    int opcion;
+    char operacion_deseada;
     printf("saludos \n");
     }
 ==================================================
     
     {
-        /*luego continuamos declarando un loop do el cual me estara ejecutando el codigo hasta que la variable de ejecucion (opcion) sea 0
-
+        /*
         en esta se ejecuta los printeos de inicio y de seleccion de opciones de operaciones
         
         luego se le asigna a la variable de operacion deseada  que se encuentra en nuestro header 
@@ -79,25 +78,17 @@ int main()
         una vez ya completada  retornara con la preguntra de si se desea continuar o no y una vez dicho que no procederra a cerrarse  
 
         */
-    do 
-    {
-        printf( "que operacion desea hacer\n" );
-        printf(" suma \n resta  \n division \n 4: Multiplicacion\n");
+{
 
-        scanf("%d", &operacion_deseada);
+    
+    printf( "que operacion desea hacer\n" );
+    printf(" + o 1: suma \n - o 2: resta  \n / o 3: division \n 4 o *: Multiplicacion\n");
 
-        calculadora(operacion_deseada);
+    scanf(" %d", &operacion_deseada);
 
-        printf( "para salir escriba el 0 \n de lo contrario escriba cualquier otro numero " );
-        scanf("%d",&opcion);
-
-    } while (opcion == 0);
-
-    exit();
-
-    }
-
+    calculadora(operacion_deseada);
 }
+
 
 ```
 
@@ -110,12 +101,31 @@ int main()
 
 void calculadora(char val){
     {
-    // se le asigna el valor al enum con el parametro pasado 
-	op = val;
+    // se le asigna el cvalor al enum op con el valor recibido desde main
+	operaciones op = val;
 
-    // se invoka y se asigna un nombre a la estructura type def el cual contendra los valores que necesitaremos guardar para las operaciones 
+    // se crean variables sin declarar 
+	int a;
+	int b;
 
-	numeros n;
+    // condicional si el valor recibido desde main es valido con los valores ya declarados en el enum si este no es correcto limpia y devuelve a main
+
+	if (op != suma && op != resta && op != multiplicacion && op != division){
+			Sleep(4);
+			printf("operacion no valida volviendo al  inicio");
+			system("cls");
+			return main();
+	}
+
+// se piden los dos numeros que seran usados para hacer la operacion
+
+	printf(" Digite el primer numero: ");
+	scanf(" %d", &a);
+	
+	printf(" Digite el segundo numero: ");
+	scanf(" %d", &b);
+
+
     }
 
     /*
@@ -123,41 +133,71 @@ void calculadora(char val){
     */
 	switch(op){
 
-		default:
-			printf("operacion no valida volviendo al  inicio");
-			main();
-
 		case suma:
-			n.r = n.a + n.b;
-			printf("%d",n.r, "\n");
-			break;
+			printf("=====================================\n");
+
+			printf(" %d \n ", a + b );
+
+			printf("===================================== \n");
+
+			Sleep(2);
+
+			cont();
+		break;
 
 		case resta:
-			n.r = n.a - n.b;
-			printf("%d",n.r, "\n");
-			break;
+			printf("=====================================\n");
+		
+			printf(" %d \n", a - b );
+
+			printf("=====================================\n");
+
+			Sleep(2);
+
+			cont();
+		break;
 
 		case multiplicacion: 
-			n.r = n.a * n.b;
-			printf("%d",n.r, "\n");
-			break;
+		
+			printf("=====================================\n");
+
+			printf(" %d \n", a * b );
+
+			printf("=====================================\n");
+
+			Sleep(2);
+
+			cont();
+
+		break;
 
 		case division:
-			if (n.b !=0)
+
+			if (b !=0)
 			{
-				n.r = n.a / n.b;
-				printf("%d",n.r, "\n");
+				printf("=====================================\n");
+				
+				printf(" %d \n", a / b );
+
+				printf("=====================================\n");
+
+				Sleep(2);
+				
+				cont();
+
 			}
 			
 			else{
-				printf(" no es posible dividir entre 0");
+				printf(" no es posible dividir entre 0 \n");
+				calculadora(op);
 			}
 			
-			break;
+		break;
 
 		
 	}
 
+	
 }
 
 			
@@ -172,38 +212,23 @@ void calculadora(char val){
 // evita que este se a;ada mas de una vez 
 #pragma once
 
+// usando una definicion enum para gestionar el switch 
 
-// variable global que se usara para pasar los parametros deseados para realizar las diferentes operaciones
-char operacion_deseada;
-
-
-enum operaciones
+typedef enum 
 {
-    suma,
-    resta,
-    division,
+    suma = 1,
+    resta ,
+    division ,
     multiplicacion,
-    exit,
-} op;
+} operaciones ;
 
-typedef struct num
-{
-    int a;
-    int b;
-    int r;
-    int endl;
-}numeros;
 
-enum operaciones op;
+// nombrando el enum para ser usado en calculaddora.c
+extern operaciones op;
 
-// llmando las diferentes funciones para que se puedan invocar en cualquier parte  del proyecto sin tener que estar llamando al archivo directamente 
 
- void calculadora(char val );
+ void calculadora(char val);
  int  main();
- //change();
-
- 
-
 
 ```
 

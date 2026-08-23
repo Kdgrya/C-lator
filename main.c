@@ -6,18 +6,11 @@ int main()
     int opcion;
     printf("saludos \n");
 
-    do
-    {
-        printf( "que operacion desea hacer hoy \n" );
-        printf("1: volver al inicio \n 2: hacer otra operacion \n 3: cambiar la operaccion \n 4: salir de la calculadora \n");
+    char operacion_deseada;
+    printf( "que operacion desea hacer\n" );
+    printf(" + o 1: suma \n - o 2: resta  \n / o 3: division \n 4 o *: Multiplicacion\n");
 
-        scanf("%d", &operacion_deseada);
+    scanf(" %d", &operacion_deseada);
 
-        calculadora(operacion_deseada);
-
-        printf( "para salir escriba el 0 \n de lo contrario escriba cualquier otro numero " );
-        scanf("%d",&opcion);
-
-    } while (opcion == 0);
-
+    calculadora(operacion_deseada);
 }
