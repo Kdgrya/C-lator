@@ -6,7 +6,7 @@ es una herramienta que te permite hacer calculos desde tu terminal, con una estr
 
 ### facil instalacion
 
-para instalar solo tienes que descargar el .exe que se encuentra en este url  [C-lator](https://pip.pypa.io/en/stable/) y añadirlo como una variante de entorno
+para instalar solo tienes que descargar el .exe que se encuentra en este url  [C-lator]() y añadirlo como una variante de entorno (NOTA: aun no implementado no existe el ejecutable aun en desarrollo )
 _______________________________
 
 
@@ -41,7 +41,9 @@ git clone https://github.com/Kdgrya/C-lator.git
 ¡Es hora de darle vida! No tengas miedo, el proceso es muy sencillo. Escribe este comando en la misma terminal para compilar el código y generar tu .exe:
 
 ``` Bash
-gcc -c main.c calculator.c calculator.h -o C-lator.exe
+cd C-lator
+make
+./main
 ```
 #### 5. ¡Listo para usar!
 ¡Ya lo tienes! Solo falta añadirlo como variable del sistema y estarás listo para disfrutar de una calculadora increíble, rápida y con mucho estilo directamente en tu terminal
