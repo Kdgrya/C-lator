@@ -7,6 +7,9 @@ int cont(){
 	char response;
 
 	printf(" Desea continuar");
+	printf("\n");
+	printf(" y par si  \n");
+	printf(" n par no \n");
 	scanf(" %c", &response);
 	
 

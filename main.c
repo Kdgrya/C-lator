@@ -8,7 +8,7 @@ int main()
 
     char operacion_deseada;
     printf( "que operacion desea hacer\n" );
-    printf(" + o 1: suma \n - o 2: resta  \n / o 3: division \n 4 o *: Multiplicacion\n");
+    printf(" 1: suma \n 2: resta  \n 3: division \n 4: Multiplicacion\n");
 
     scanf(" %d", &operacion_deseada);
 
